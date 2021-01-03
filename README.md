@@ -24,3 +24,14 @@ A command get have multiple triggers with wildcards in them.
 Commands can have parameters in the listening part that can be used in the execution.
 
 Use the global "stop listening" command to put WSR to sleep. Use "start listening" to wake it up. If "stop listening" sets WSR to OFF instead of SLEEP, go to WSR's Configuration menu > Speech Recognition Control Panel > Advanced Speech Options > check Enable Voice Activation.
+
+## Use These Samples
+
+Just copy the file from this repo to your macros folder, then right-click -> sign the macro. Turn off signature verification for lazy mode.
+
+## Contribute
+
+Submit a PR with
+ - amends to the files
+ - a different sample for the existing categories
+ - a new category, like a different game
