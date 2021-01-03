@@ -179,12 +179,25 @@ whitespace</insertText>
 ```
 
 ### run
+Start programs or shell scripts with parameters
+```
+<run command="C:\full\path\to\file.exe" params="p1 p2 p3"/>
+```
 
 ### emulateRecognition
+```
+<emulateRecognition>speech for activating a command</emulateRecognition>
+```
 
 ### waitFor
+```
+<waitFor seconds="0.01" />
+```
 
-### speak
+###
+```
+<speak speakFlags="2">Stopped</speak>
+```
 
 ### alert
 
