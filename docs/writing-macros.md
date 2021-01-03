@@ -78,7 +78,9 @@ Put these inside an opening and closing command
 ```
 
 ### stateIsSet
-TODO
+```
+<stateIsSet name="disableCapTextInDocument" value="1"/>
+```
 
 ### scriptCondition
 TODO
@@ -225,7 +227,7 @@ TODO
 
 ### setTextFeedback
 ```
-<setTextFeedback style="warning">What was that?</setTextFeedback>
+<setTextFeedback style="warning" speak="false">What was that?</setTextFeedback>
 ```
 
 ### script
@@ -259,6 +261,7 @@ TODO
 ### setState
 ```
 <setState name="answers" value="no" />
+<setState name="disableCapTextInDocument" value="1"/>
 ```
 
 ### switchToApp
@@ -289,4 +292,6 @@ TODO
 ```
 
 ### disambiguate
-TODO
+```
+<disambiguate title="Send email to whom?" prompt="Who would you like to send email to?" timeout="30" propname="OutlookContact"/>
+```
