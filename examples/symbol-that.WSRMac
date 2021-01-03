@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+
+<command priority="3">
+  <listenFor>[symbol] that</listenFor>
+  <listenFor>add [symbol] to that</listenFor>
+  <sendKeys>{250 WAIT}{{ctrl}}c{[symbol.keys]}</sendKeys> 
+</command>
+
+<command priority="2">
+  <listenFor>[symbol] [something]</listenFor>
+  <listenFor>add [symbol] to [something]</listenFor>
+  <emulateRecognition>select {[something]}</emulateRecognition>
+  <sendKeys>{250 WAIT}{{ctrl}}c{[symbol.keys]}</sendKeys> 
+</command>
+
+<command priority="1">
+  <listenFor>[symbol] [textInDocument]</listenFor>
+  <listenFor>[symbol] the word [textInDocument]</listenFor>
+  <listenFor>add [symbol] to [textInDocument]</listenFor>
+  <listenFor>add [symbol] to the word [textInDocument]</listenFor>
+  <emulateRecognition waitForDisambiguation="15">select {[textInDocument]}</emulateRecognition>
+  <sendKeys>{250 WAIT}{{ctrl}}c{[symbol.keys]}</sendKeys> 
+</command>
+
+<command priority="0">
+  <listenFor>[symbol] *</listenFor>
+  <setTextFeedback style="warning">What was that?</setTextFeedback>
+</command>
+
+<command priority="3">
+  <listenFor>?format [format] that</listenFor>
+  <sendKeys>{250 WAIT}{[format.keys]}</sendKeys> 
+</command>
+
+<command priority="2">
+  <listenFor>?format [format] [something]</listenFor>
+  <emulateRecognition>select {[something]}</emulateRecognition>
+  <sendKeys>{250 WAIT}{[format.keys]}</sendKeys> 
+</command>
+
+<command priority="1">
+  <listenFor>?format [format] [textInDocument]</listenFor>
+  <listenFor>?format [format] the word [textInDocument]</listenFor>
+  <emulateRecognition waitForDisambiguation="15">select {[textInDocument]}</emulateRecognition>
+  <sendKeys>{250 WAIT}{[format.keys]}</sendKeys> 
+</command>
+
+<command priority="0">
+  <listenFor>[format] *</listenFor>
+  <setTextFeedback style="warning">What was that?</setTextFeedback>
+</command>
+
+<listenForList name="symbol" propname="keys">
+  <item propval="{u+0027}{{ctrl}}v{u+0027}">quote</item>
+  <item propval="{u+0027}{{ctrl}}v{u+0027}">quotes</item>
+  <item propval="{u+0022}{{ctrl}}v{u+0022}">double quote</item>
+  <item propval="{u+0022}{{ctrl}}v{u+0022}">double quotes</item>
+  <item propval="{u+005b}{{ctrl}}v{u+005d}">?square bracket</item>
+  <item propval="{u+005b}{{ctrl}}v{u+005b}">?square brackets</item>
+  <item propval="{u+007b}{{ctrl}}v{u+007d}">squiggly bracket</item>
+  <item propval="{u+007b}{{ctrl}}v{u+007d}">squiggly brackets</item>
+  <item propval="{u+007b}{{ctrl}}v{u+007d}">curly bracket</item>
+  <item propval="{u+007b}{{ctrl}}v{u+007d}">curly brackets</item>
+  <item propval="{u+0028}{{ctrl}}v{u+0029}">paren</item>
+  <item propval="{u+0028}{{ctrl}}v{u+0029}">parens</item>
+  <item propval="{u+0028}{{ctrl}}v{u+0029}">parenthesize</item>
+  <item propval="{u+0028}{{ctrl}}v{u+0029}">parentheses</item>
+  <item propval="{u+003c}{{ctrl}}v{u+003e}">less ?than greater ?than</item>
+  <item propval="{u+003c}{{ctrl}}v{u+003e}">less ?than greater thans</item>
+</listenForList>
+
+<listenForList name="format" propname="keys">
+  <item propval="{{ctrl}}b">bold</item>
+  <item propval="{{ctrl}}i">italicize</item>
+  <item propval="{{ctrl}}u">underline</item>
+</listenForList>
+
+<rule name="something">
+<list>
+   <p>
+     <o>the</o>
+     <o>
+       <list>
+         <p>previous</p>
+         <p>next</p>
+       </list>
+       <o><ruleref name="1to20"/></o>
+     </o>
+     <list>
+       <p>character</p>
+       <p>characters</p>
+       <p>word</p>
+       <p>words</p>
+       <p>sentence</p>
+       <p>sentences</p>
+       <p>paragraph</p>
+       <p>paragraphs</p>
+       <p>document</p>
+     </list>
+   </p>
+</list>
+</rule>
+
+<numbers name="1to20" start="1" stop="20"/>
+
+</speechMacros>
