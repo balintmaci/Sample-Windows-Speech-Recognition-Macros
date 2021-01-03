@@ -256,7 +256,10 @@ Commands:
 
 
 ### sendMessage
-TODO
+This will mute the audio. Not sure how it works.
+```
+<sendMessage className="Button" windowName="Start" message="793" wParam="6552" lParam="524288"/>
+```
 
 ### setState
 ```
