@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+    <command>
+        <listenFor>run ?system diagnostics *</listenFor>
+        <listenFor>how are you</listenFor>
+        <speak>All systems functional</speak>
+    </command>
+
+    <command>
+        <listenFor>say [...]</listenFor>
+        <speak>{[...]}</speak>
+    </command>
+
+    <command>
+        <listenFor>pay respects</listenFor>
+        <sendKeys>f</sendKeys>
+    </command>
+</speechMacros>
