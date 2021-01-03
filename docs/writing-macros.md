@@ -168,6 +168,11 @@ Put these after the conditions
 
 [Content copied here](special-keys.md)
 
+
+```
+<sendKeys times="5">{{CTRL}}c</sendKeys>
+```
+
 ### insertText
 ```
     <insertText>this
@@ -194,7 +199,7 @@ Start programs or shell scripts with parameters
 <waitFor seconds="0.01" />
 ```
 
-###
+### speak
 ```
 <speak speakFlags="2">Stopped</speak>
 ```
@@ -206,27 +211,64 @@ Start programs or shell scripts with parameters
 ### setTextFeedback
 
 ### script
+Can inline JScript or VBScript. [Examples](script-examples.md)
 
 ### wmpMediaPlay
+```
+<wmpMediaPlay attrname="Name" attrvalue="{[...]}"/>
+```
 
 ### wmpMediaControl
+```
+<wmpMediaControl command="previous" times="{[times]}"/>
+```
+Commands:
+ - pause
+ - play
+ - stop
+ - next
+ - mute
+ - previous
+ - loop_on
+ - loop_off
+ - loop_toggle
+ - shuffle_{on/off/toggle}
+
 
 ### sendMessage
+TODO
 
 ### setState
+```
+<setState name="answers" value="no" />
+```
 
 ### switchToApp
+```
+<switchToApp windowTitleContains="Google Search" />
+```
 
 ### minimizeApp
+TODO
 
 ### maximizeApp
+TODO
 
 ### restoreApp
+TODO
 
 ### closeApp
+TODO
 
 ### prompt
+TODO
 
 ### mouse
+```
+<mouse button="left" command="click" position="1230,200" />
+<mouse button="left" command="scroll" scrollDirection="up" position="830,582" />
+<mouse button="left" command="scroll" scrollDirection="down" position="830,582" />
+```
 
 ### disambiguate
+TODO
