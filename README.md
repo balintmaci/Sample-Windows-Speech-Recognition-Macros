@@ -35,3 +35,56 @@ Submit a PR with
  - amends to the files
  - a different sample for the existing categories
  - a new category, like a different game
+
+##  Writing macros
+
+Structure of a macro XML file: [test file](test/test.WSRMac)
+
+## All available tags
+Put these inside an opening and closing command tag to be executed one after the other.
+
+### listenFor
+
+### sendKeys
+
+### insertText
+
+### run
+
+### emulateRecognition
+
+### waitFor
+
+### speak
+
+### alert
+
+### confirm
+
+### setTextFeedback
+
+### script
+
+### wmpMediaPlay
+
+### wmpMediaControl
+
+### sendMessage
+
+### setState
+
+### switchToApp
+
+### minimizeApp
+
+### maximizeApp
+
+### restoreApp
+
+### closeApp
+
+### prompt
+
+### mouse
+
+### disambiguate
