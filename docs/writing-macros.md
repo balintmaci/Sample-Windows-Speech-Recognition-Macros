@@ -2,10 +2,38 @@
 
 Structure of a macro XML file: [test file](test/test.WSRMac)
 
-## All available tags
-Put these inside an opening and closing command tag to be executed one after the other.
+## Conditions
+Put these inside an opening and closing command
+
+### appIsRunning
+
+### appIsInForeground
+
+### condition
+
+### stateIsSet
+
+### scriptCondition
 
 ### listenFor
+
+### listenForList
+
+### rule
+
+### numbers
+
+### fontNames
+
+### wmpMediaItems
+
+### fileNames
+
+### ruleScript
+
+
+## Actions
+Put these after the conditions
 
 ### sendKeys
 
