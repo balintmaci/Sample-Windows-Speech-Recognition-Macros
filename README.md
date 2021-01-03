@@ -1,13 +1,26 @@
 # Sample-Windows-Speech-Recognition-Macros
-Basic Windows Speech Recognition Macros, useful as samples for more interesting projects.
 
-Back in 2012 (those dark days) I uploaded a video demonstrating some macros I had written using the Windows Speech Recognition framework. Quite a few people have asked for the files, and my original plan was to share them once I'd done some more work. However, my hard-drive failed and I lost them all because I was too stupid to take proper backups. Consequently the files are not complete; some of the functionality shown in the video is missing because I hadn't the time to re-create it.
+Based on
+<https://github.com/RoxtonLabs/Sample-Windows-Speech-Recognition-Macros>
 
-Here's the video:
-https://www.youtube.com/watch?v=wuYGpWmFh0M
+And
+<https://www.reddit.com/r/X3TC/comments/1t7ft0/howto_real_captains_dont_use_keyboards/>
 
-For reasons presumably known to God but not to mortal man, Microsoft have removed all instructions on how to implement WSRMacros. However, archived instructions can still be found through the Wayback Machine:
+## Setup
 
-http://web.archive.org/web/20111001185620/http://archive.msdn.microsoft.com/wsrmacros
+Setup microphone and speech recognition in windows
 
-I should stress that the files are really not finished products - these days I would do that kind of thing very differently - but they might be useful starting points for others who want to have a go with WSR.
+Download, install, run Windows Speech Recognition Macros (WSRM) <http://www.microsoft.com/en-us/download/details.aspx?id=13045>
+
+In the System Tray right click the blue WSRM icon, go to Security > Create Signing Certificates.
+
+## Your Macro Files
+
+You should now have a folder called "Speech Macros" in your Documents folder. Files must have extension *.WSRMac*
+
+Examples should help you get started on how to write macros, it's quite powerful.
+It can use mouse, keypresses, delay, running scripts or programs, etc.
+A command get have multiple triggers with wildcards in them.
+Commands can have parameters in the listening part that can be used in the execution.
+
+Use the global "stop listening" command to put WSR to sleep. Use "start listening" to wake it up. If "stop listening" sets WSR to OFF instead of SLEEP, go to WSR's Configuration menu > Speech Recognition Control Panel > Advanced Speech Options > check Enable Voice Activation.
