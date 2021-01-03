@@ -45,7 +45,7 @@ LONGSIGNATUREFORTHEFILE
 ## command tag
 Command tags can be put inside the speechMacro tag. Command tags can contain all conditions, definitions, and actions.
 ```
-<command>
+<command priority="1">
     definitions
 
     conditions
@@ -70,7 +70,12 @@ Put these inside an opening and closing command
 ```
 
 ### condition
-TODO
+```
+<condition operator="or">
+    <appIsInForeground processName="winword.exe"/>
+    <appIsInForeground processName="wordpad.exe"/>
+</condition>
+```
 
 ### stateIsSet
 TODO
@@ -110,9 +115,17 @@ Use in *listenFor* as parameter
     <item>+skip +down</item>
 </listenForList>
 ```
+Here, inline the propval of the uttered word in place of *symbol* by writing ```<sendKeys>{[symbol.keys]}</sendKeys>``` for example.
+```
+<listenForList name="symbol" propname="keys">
+    <item propval="{u+0027}{{ctrl}}v{u+0027}">quote</item>
+    <item propval="{u+0027}{{ctrl}}v{u+0027}">quotes</item>
+    <item propval="{u+0022}{{ctrl}}v{u+0022}">double quote</item>
+</listenForList>
+```
 
 ### rule
-TODO what does it do? Probably used as a *listenFor* format but unclear how.
+A detailed *listenFor* parameter format. Example: *the next 3 words*
 ```
 <rule name="something">
     <list>
@@ -168,9 +181,9 @@ Put these after the conditions
 
 [Content copied here](special-keys.md)
 
-
+Wait 250 ms and press CTRL+c
 ```
-<sendKeys times="5">{{CTRL}}c</sendKeys>
+<sendKeys times="5">{250 WAIT}{{CTRL}}c</sendKeys>
 ```
 
 ### insertText
@@ -191,7 +204,7 @@ Start programs or shell scripts with parameters
 
 ### emulateRecognition
 ```
-<emulateRecognition>speech for activating a command</emulateRecognition>
+<emulateRecognition waitForDisambiguation="15">speech for activating a command</emulateRecognition>
 ```
 
 ### waitFor
@@ -205,10 +218,15 @@ Start programs or shell scripts with parameters
 ```
 
 ### alert
+TODO
 
 ### confirm
+TODO
 
 ### setTextFeedback
+```
+<setTextFeedback style="warning">What was that?</setTextFeedback>
+```
 
 ### script
 Can inline JScript or VBScript. [Examples](script-examples.md)
