@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+
+  <command>
+    <listenFor>back out</listenFor>
+    <listenFor>back up</listenFor>
+    <listenFor>go back</listenFor>
+    <sendKeys>{Esc}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>never mind</listenFor>
+    <listenFor>close everything</listenFor>
+    <listenFor>clear away</listenFor>
+    <sendKeys>{DEL}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>computer * sector map</listenFor>
+    <sendKeys>.</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* galaxy map</listenFor>
+    <sendKeys>,</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* bend time</listenFor>
+    <sendKeys>j</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* comms</listenFor>
+    <sendKeys>c</sendKeys>
+  </command>
+
+   <command>
+    <listenFor>* trade</listenFor>
+    <sendKeys>d</sendKeys>
+  </command>
+
+   <command>
+    <listenFor>* cargo hold</listenFor>
+    <sendKeys>f</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>dock *</listenFor>
+    <sendKeys>+d</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* info</listenFor>
+    <sendKeys>u</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* best buys</listenFor>
+    <sendKeys>6</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>* best selling</listenFor>
+	<listenFor>* best sells</listenFor>
+    <sendKeys>5</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>target *</listenFor>
+    <sendKeys>t</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>next object</listenFor>
+    <listenFor>shift screen up</listenFor>
+    <sendKeys>{PGUP}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>previous object</listenFor>
+    <listenFor>shift screen down</listenFor>
+    <sendKeys>{PGDN}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>next enemy</listenFor>
+    <sendKeys>{HOME}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>previous enemy</listenFor>
+    <sendKeys>{END}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>match * speed</listenFor>
+    <sendKeys>+f</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>auto pilot *</listenFor>
+    <sendKeys>+a</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>weapons one</listenFor>
+    <listenFor>select one</listenFor>
+    <sendKeys>1</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>weapons two</listenFor>
+    <listenFor>select two</listenFor>
+    <sendKeys>2</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>weapons three</listenFor>
+    <listenFor>select three</listenFor>
+    <sendKeys>3</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>up</listenFor>
+    <sendKeys>{UP}</sendKeys>
+  </command>
+
+   <command>
+    <listenFor>down</listenFor>
+    <sendKeys>{DOWN}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>left</listenFor>
+    <sendKeys>{LEFT}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>right</listenFor>
+    <sendKeys>{RIGHT}</sendKeys>
+  </command>
+
+  <command>
+    <listenFor>confirm</listenFor>
+    <sendKeys>{ENTER}</sendKeys>
+  </command>
+</speechMacros>

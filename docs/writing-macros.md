@@ -188,6 +188,10 @@ Wait 250 ms and press CTRL+c
 <sendKeys times="5">{250 WAIT}{{CTRL}}c</sendKeys>
 ```
 
+ - ```+(EC)``` is SHIFT+E then SHIFT+C
+ - ```{h 10}``` is H sent 10 times
+ - ```{LEFT 42}``` is left arrow sent 42 times
+
 ### insertText
 ```
     <insertText>this
