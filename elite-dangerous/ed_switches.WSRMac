@@ -29,7 +29,7 @@
 
     <listenForList name="firegroupVerb">
         <item>switch to</item>
-        <item>select</item>
+        <item>?select</item>
         <item>change to</item>
     </listenForList>
 
@@ -50,5 +50,6 @@
         <item propval="y">chauff launcher</item>
         <item propval="i">night vision</item>
         <item propval="m">cockpit mode</item>
+        <item propval="t">?SRV turret</item>
     </listenForList>
 </speechMacros>
