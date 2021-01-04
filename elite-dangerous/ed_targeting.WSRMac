@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+    <appIsRunning processName="EliteDangerous64.exe" />
+
+    <command>
+        <listenFor>?select [which] target</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{{[which.val]}}t</sendKeys>
+        <speak>selecting {[which]} target</speak>
+    </command>
+
+    <command>
+        <listenFor>?select next system ?in ?route</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{s}t</sendKeys>
+        <speak>selecting next system in route</speak>
+    </command>  
+
+    <listenForList name="which" propname="val">
+        <item propval="t">?simple</item>
+        <item propval="n">next</item>
+        <item propval="p">previous</item>
+        <item propval="d">most dangerous</item>
+    </listenForList>
+</speechMacros>
