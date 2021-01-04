@@ -21,7 +21,7 @@
         <listenFor>[changeDirection] throttle</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys times="500">{1 WAIT}{[changeDirection.val]}</sendKeys>
+        <sendKeys times="500">{1 WAIT}+{[changeDirection.val]}</sendKeys>
         <speak>{[changeDirection]} throttle</speak>
     </command>
 
@@ -46,6 +46,13 @@
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <emulateRecognition>set speed to 100 %</emulateRecognition>
         <emulateRecognition>boost engine</emulateRecognition>
+    </command>
+
+    <command>
+        <listenFor>half speed</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <emulateRecognition>set speed to 50 %</emulateRecognition>
     </command>
 
     <listenForList name="percent" propname="val">
