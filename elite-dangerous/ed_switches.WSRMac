@@ -49,5 +49,6 @@
         <item propval="c">?cargo scoop</item>
         <item propval="y">chauff launcher</item>
         <item propval="i">night vision</item>
+        <item propval="m">cockpit mode</item>
     </listenForList>
 </speechMacros>
