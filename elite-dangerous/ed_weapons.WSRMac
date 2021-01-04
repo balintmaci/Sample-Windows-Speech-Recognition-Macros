@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+    <appIsRunning processName="EliteDangerous64.exe" />
+
+    <command>
+        <listenFor>[firegroupVerb] [which] fire group</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{{[which.val]}}u</sendKeys>
+        <speak>selecting {[which]} firegroup</speak>
+    </command>
+
+    <command>
+        <listenFor>[hardpointVerb] hardpoints</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>u</sendKeys>
+        <speak>toggling hardpoints</speak>
+    </command>
+
+    <listenForList name="hardpointVerb">
+        <item>toggle</item>
+        <item>deploy</item>
+        <item>retract</item>
+    </listenForList>
+
+    <listenForList name="firegroupVerb">
+        <item>switch to</item>
+        <item>select</item>
+        <item>change to</item>
+    </listenForList>
+
+    <listenForList name="which" propname="val">
+        <item propval="n">next</item>
+        <item propval="p">previous</item>
+    </listenForList>
+</speechMacros>

@@ -16,7 +16,7 @@
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <sendKeys>{s}t</sendKeys>
         <speak>selecting next system in route</speak>
-    </command>  
+    </command>
 
     <listenForList name="which" propname="val">
         <item propval="t">?simple</item>
