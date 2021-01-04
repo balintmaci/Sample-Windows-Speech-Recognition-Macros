@@ -84,6 +84,13 @@
         <emulateRecognition>set speed to 50 %</emulateRecognition>
     </command>
 
+    <command>
+        <listenFor>quarter speed</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <emulateRecognition>set speed to 25 %</emulateRecognition>
+    </command>
+
     <listenForList name="percent" propname="val">
         <item propval="0">0</item>
         <item propval="1">25</item>

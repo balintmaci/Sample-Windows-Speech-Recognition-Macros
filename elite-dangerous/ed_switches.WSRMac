@@ -11,17 +11,18 @@
     </command>
 
     <command>
-        <listenFor>[hardpointVerb] hardpoints</listenFor>
+        <listenFor>[toggleVerb] [toggleObject]</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>u</sendKeys>
-        <speak>toggling hardpoints</speak>
+        <sendKeys>{{[toggleObject.val]}}u</sendKeys>
+        <speak>{[toggleVerb]}ing {[toggleObject]}</speak>
     </command>
 
-    <listenForList name="hardpointVerb">
+    <listenForList name="toggleVerb">
         <item>toggle</item>
         <item>deploy</item>
         <item>retract</item>
+        <item>switch</item>
     </listenForList>
 
     <listenForList name="firegroupVerb">
@@ -33,5 +34,11 @@
     <listenForList name="which" propname="val">
         <item propval="n">next</item>
         <item propval="p">previous</item>
+    </listenForList>
+    
+    <listenForList name="toggleObject" propname="val">
+        <item propval="u">hardpoints</item>
+        <item propval="s">silent running</item>
+        <item propval="h">heatsink</item>
     </listenForList>
 </speechMacros>

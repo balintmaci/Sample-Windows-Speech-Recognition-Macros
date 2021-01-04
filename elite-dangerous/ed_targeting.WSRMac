@@ -19,7 +19,7 @@
     </command>
 
     <listenForList name="which" propname="val">
-        <item propval="t">?simple</item>
+        <item propval="t">?any</item>
         <item propval="n">next</item>
         <item propval="p">previous</item>
         <item propval="d">most dangerous</item>
