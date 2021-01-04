@@ -18,6 +18,34 @@
     </command>
 
     <command>
+        <listenFor>frame shift drive</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{f}d</sendKeys>
+    </command>
+
+    <command>
+        <listenFor>super cruise</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{s}c</sendKeys>
+    </command>
+
+    <command>
+        <listenFor>hyper space jump</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{h}j</sendKeys>
+    </command>
+
+    <command>
+        <listenFor>?toggle orbit lines</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{o}l</sendKeys>
+    </command>
+
+    <command>
         <listenFor>[changeDirection] throttle</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
