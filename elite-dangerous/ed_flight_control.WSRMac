@@ -4,6 +4,7 @@
 
     <command>
         <listenFor>* flight assist</listenFor>
+        <listenFor>* drive assist</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <sendKeys>y</sendKeys>
@@ -73,8 +74,8 @@
         <listenFor>full speed ?ahead</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <emulateRecognition>set speed to 100 %</emulateRecognition>
         <emulateRecognition>boost engine</emulateRecognition>
+        <emulateRecognition>set speed to 100 %</emulateRecognition>
     </command>
 
     <command>
