@@ -35,6 +35,14 @@
     </command>
 
     <command>
+        <listenFor>recall ship</listenFor>
+        <listenFor>dismiss ship</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>s</sendKeys>
+    </command>
+
+    <command>
         <listenFor>?open [screen]</listenFor>
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
