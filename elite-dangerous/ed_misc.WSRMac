@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+    <appIsRunning processName="EliteDangerous64.exe" />
+
+    <command>
+        <listenFor>[divert] power to [which]</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys times="{[divert.val]}">{[which.val]}{1 WAIT}</sendKeys>
+        <speak>{[divert]} power to {[which]}</speak>
+    </command>
+
+    <command>
+        <listenFor>[resetVerb] power ?distribution</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{DOWN}</sendKeys>
+        <speak>pips reset</speak>
+    </command>
+
+    <command>
+        <listenFor>reset ?headset orientation</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{HOME}</sendKeys>
+        <speak>orientation reset</speak>
+    </command>
+
+    <command>
+        <listenFor>transmit message</listenFor>
+        <listenFor>transmission over</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>v</sendKeys>
+    </command>
+
+    <listenForList name="divert" propname="val">
+        <item propval="1">divert</item>
+        <item propval="1">more</item>
+        <item propval="5">full</item>
+        <item propval="5">all</item>
+    </listenForList>
+
+    <listenForList name="which" propname="val">
+        <item propval="{LEFT}">system</item>
+        <item propval="{LEFT}">shields</item>
+        <item propval="{RIGHT}">weapons</item>
+        <item propval="{UP}">engines</item>
+    </listenForList>
+
+    <listenForList name="resetVerb">
+        <item>reset</item>
+        <item>rebalance</item>
+        <item>balance</item>
+    </listenForList>
+</speechMacros>

@@ -22,7 +22,9 @@
         <item>toggle</item>
         <item>deploy</item>
         <item>retract</item>
-        <item>switch</item>
+        <item>switch ?on ?off</item>
+        <item>turn ?on ?off</item>
+        <item>use</item>
     </listenForList>
 
     <listenForList name="firegroupVerb">
@@ -40,5 +42,12 @@
         <item propval="u">hardpoints</item>
         <item propval="s">silent running</item>
         <item propval="h">heatsink</item>
+        <item propval="l">?ship lights</item>
+        <item propval="g">landing gear</item>
+        <item propval="g">landing gears</item>
+        <item propval="g">wheels</item>
+        <item propval="c">?cargo scoop</item>
+        <item propval="y">chauff launcher</item>
+        <item propval="i">night vision</item>
     </listenForList>
 </speechMacros>
