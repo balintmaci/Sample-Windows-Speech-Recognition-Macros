@@ -34,6 +34,25 @@
         <sendKeys>v</sendKeys>
     </command>
 
+    <command>
+        <listenFor>?open [screen]</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>{[screen.val]}</sendKeys>
+        <speak>{[screen]}</speak>
+    </command>
+
+    <listenForList name="screen" propname="val">
+        <item propval="1">external panel</item>
+        <item propval="2">comms ?panel</item>
+        <item propval="3">role panel</item>
+        <item propval="4">internal panel</item>
+        <item propval=".">galaxy map</item>
+        <item propval=",">system map</item>
+        <item propval="o">discovery</item>
+        <item propval="k">full spectrum system scanner</item>
+    </listenForList>
+
     <listenForList name="divert" propname="val">
         <item propval="1">divert</item>
         <item propval="1">more</item>
