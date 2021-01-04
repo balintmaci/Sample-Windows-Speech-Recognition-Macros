@@ -8,7 +8,7 @@ And
 
 ## Setup
 
-Setup microphone and speech recognition in windows
+Setup microphone and speech recognition in windows. The speech settings in the *Settings* app is not used by WSRM, use *Control Panel -> Ease of Access*. This also includes your TTS voice.
 
 Download, install, run Windows Speech Recognition Macros (WSRM) <http://www.microsoft.com/en-us/download/details.aspx?id=13045>
 
@@ -27,7 +27,7 @@ Use the global "stop listening" command to put WSR to sleep. Use "start listenin
 
 ## Use These Samples
 
-Just copy the file from this repo to your macros folder, then right-click -> sign the macro. Turn off signature verification for lazy mode.
+Just copy the file from this repo to your macros folder, then right-click -> sign the macro. Turn off signature verification for lazy (unsafe) mode.
 
 ## Contribute
 
