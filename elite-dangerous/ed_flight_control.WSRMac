@@ -43,6 +43,7 @@
 
         <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <sendKeys>{o}l</sendKeys>
+        <speak>toggling orbit lines</speak>
     </command>
 
     <command>
