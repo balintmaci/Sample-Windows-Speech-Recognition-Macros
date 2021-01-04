@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<speechMacros>
+    <appIsRunning processName="EliteDangerous64.exe" />
+
+    <command>
+        <listenFor>* flight assist</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>y</sendKeys>
+    </command>
+
+    <command>
+        <listenFor>boost engine</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>b</sendKeys>
+        <speak speakFlags="2">boosting</speak>
+    </command>
+
+    <command>
+        <listenFor>[changeDirection] throttle</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys times="500">{1 WAIT}{[changeDirection.val]}</sendKeys>
+        <speak>{[changeDirection]} throttle</speak>
+    </command>
+
+    <command>
+        <listenFor>?set speed to [percent] ?%</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <sendKeys>+{[percent.val]}</sendKeys>
+        <speak>setting speed to {[percent]} %</speak>
+    </command>
+
+    <command>
+        <listenFor>stop ?ship</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <emulateRecognition>set speed to 0 %</emulateRecognition>
+    </command>
+
+    <command>
+        <listenFor>full speed ?ahead</listenFor>
+
+        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
+        <emulateRecognition>set speed to 100 %</emulateRecognition>
+        <emulateRecognition>boost engine</emulateRecognition>
+    </command>
+
+    <listenForList name="percent" propname="val">
+        <item propval="0">0</item>
+        <item propval="1">25</item>
+        <item propval="2">50</item>
+        <item propval="3">75</item>
+        <item propval="4">100</item>
+    </listenForList>
+    
+    <listenForList name="changeDirection" propname="val">
+        <item propval="w">increase</item>
+        <item propval="s">decrease</item>
+    </listenForList>
+</speechMacros>
