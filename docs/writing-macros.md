@@ -203,7 +203,7 @@ whitespace</insertText>
 ```
 
 ### run
-Start programs or shell scripts with parameters
+Start programs or shell scripts with parameters. [Running script files](running-script-files.md)
 ```
 <run command="C:\full\path\to\file.exe" params="p1 p2 p3"/>
 ```
