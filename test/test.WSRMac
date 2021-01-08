@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <speechMacros>
     <command>
-        <listenFor>run ?system diagnostics *</listenFor>
-        <listenFor>how are you</listenFor>
-        <speak>All systems functional</speak>
-    </command>
-
-    <command>
-        <listenFor>say [...]</listenFor>
+        <listenFor>repeat [...]</listenFor>
         <speak>{[...]}</speak>
     </command>
 
@@ -15,4 +9,16 @@
         <listenFor>pay respects</listenFor>
         <sendKeys>f</sendKeys>
     </command>
+
+    <command>
+        <listenFor>hello world [program]</listenFor>
+        <!-- <run command="powershell" params=" -windowstyle hidden {[program.val]}"/> -->
+        <run command="powershell" params="Set-Variable -Name 'macros' -Value ([Environment]::GetFolderPath('MyDocuments') + '\Speech Macros'); {[program.val]}"/>
+    </command>
+
+    <listenForList name="program" propname="val">
+        <item propval="python $macros\test\test.py">python</item>
+        <item propval="cscript $macros\test\test.js hello world">j script</item>
+        <item propval="cscript $macros\test\test.vbs hello world ">v b script</item>
+    </listenForList>
 </speechMacros>

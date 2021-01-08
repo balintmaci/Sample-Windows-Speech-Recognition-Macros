@@ -57,7 +57,7 @@ def w32_speak():
     speaker.Speak("speak test")
 
 if __name__ == "__main__":
-    ag_mouse()
-    ag_keys()
-    w32_notepad()
+    # ag_mouse()
+    # ag_keys()
+    # w32_notepad()
     w32_speak()
