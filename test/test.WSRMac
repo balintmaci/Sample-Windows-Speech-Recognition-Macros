@@ -16,9 +16,40 @@
         <run command="powershell" params="Set-Variable -Name 'macros' -Value ([Environment]::GetFolderPath('MyDocuments') + '\Speech Macros'); {[program.val]}"/>
     </command>
 
+    <command>
+        <listenFor>scenario 1</listenFor>
+        <emulateRecognition>#: script( test , none , NaN , undefined , null )</emulateRecognition>
+    </command>
+
+    <command>
+        <listenFor>#: script( [filename] , [....] )</listenFor>
+        <script language="JScript">
+            <![CDATA[
+            var filename = "{[filename.val]}";
+            var params = "{[....]}";
+            Application.Speak("Running File " + filename + " with parameters " + params);
+            var fs = new ActiveXObject("Scripting.FileSystemObject");
+            var shell  = new ActiveXObject("WScript.Shell");
+            var docsPath = shell.SpecialFolders("MyDocuments")
+            var scriptsPath = docsPath + "\\Speech Macros\\test-scripts\\";
+            var fullPath = scriptsPath + filename;
+            // Application.Speak(fullPath);
+            var file = fs.GetFile(fullPath);
+            var script = file.OpenAsTextStream().ReadAll();
+            eval(script);
+            ]]>
+        </script>
+    </command>
+
+    <rule name="filename">
+        <list propname="val">
+            <p valstr="test.js">test</p>
+        </list>
+    </rule>
+
     <listenForList name="program" propname="val">
-        <item propval="python $macros\test\test.py">python</item>
-        <item propval="cscript $macros\test\test.js hello world">j script</item>
-        <item propval="cscript $macros\test\test.vbs hello world ">v b script</item>
+        <item propval="python $macros\test-scripts\test.py">python</item>
+        <item propval="cscript $macros\test-scripts\test.js hello world">j script</item>
+        <item propval="cscript $macros\test-scripts\test.vbs hello world ">v b script</item>
     </listenForList>
 </speechMacros>
