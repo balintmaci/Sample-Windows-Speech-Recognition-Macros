@@ -322,25 +322,25 @@ Rule Generators can be children of the ```<speechMacros>``` node. These are Glob
 In the following example two commands reference a global rule generator that has a list of names:
 ```xml
 <speechMacros>
-     <command>
-          <listenFor>Say hello to [person]</listenFor>
-          <speak>Hello {[person]}</speak>
-     </command>
- 
-     <command>
-          <listenFor>Say goodbye to [person]</listenFor>
-          <speak>Goodbye {[person]}</speak>
-     </command>
-    
-     <rule name="person">
-     <list>
-          <p>Rob</p>
-          <p>Alex</p>
-          <p>Ana</p>
-          <p>Travis</p>
-          <p>Laura</p>
-     </list>
-     </rule>
+    <command>
+        <listenFor>Say hello to [person]</listenFor>
+        <speak>Hello {[person]}</speak>
+    </command>
+
+    <command>
+        <listenFor>Say goodbye to [person]</listenFor>
+        <speak>Goodbye {[person]}</speak>
+    </command>
+
+    <rule name="person">
+        <list>
+            <p>Rob</p>
+            <p>Alex</p>
+            <p>Ana</p>
+            <p>Travis</p>
+            <p>Laura</p>
+        </list>
+    </rule>
 </speechMacros>
 ```
  
@@ -1494,9 +1494,11 @@ A more complicated example involves multiple semantic properties with the same p
 <speechMacros>
     <command>
         <rule>
-        <p>Send email to</p>
-        <p min="1" max="3"> <ruleref name="person" propname="person"/>
-            <o>and</o> </p> 
+            <p>Send email to</p>
+            <p min="1" max="3">
+                <ruleref name="person" propname="person"/>
+                <o>and</o>
+            </p> 
         </rule>
         <setTextFeedback> Sending email to {[foreach:{[person]};]} </setTextFeedback>
         <run command="mailto:{[foreach:{[person.email]};]}" /> 
