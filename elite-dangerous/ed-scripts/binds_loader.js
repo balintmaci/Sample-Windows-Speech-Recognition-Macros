@@ -4,7 +4,7 @@ edBindings.async = false;
 edBindings.load(edBindingsPath);
 
 var edKeyboardLayout = edBindings.getElementsByTagName("KeyboardLayout").item(0).text;
-log(edKeyboardLayout);
+log("Keyboard Layout: " + edKeyboardLayout);
 
 function getKeyboardKey(binding) {
     if (binding) {
@@ -35,7 +35,11 @@ function processKeyCode(keyString) {
             if (sliced.length == 1) {
                 return sliced;
             }
-            return "{" + sliced.toUpperCase() + "}";
+            keyword = sliced.toUpperCase();
+            if (keyword.indexOf("ARROW") > -1) {
+                keyword = keyword.substr(0, keyword.indexOf("ARROW"));
+            }
+            return "{" + keyword + "}";
         }
     }
     return null;
@@ -74,6 +78,6 @@ function getKeyForTask(task) {
     return null;
 }
 
-// log(getKeyForTask("HMDReset"));
-// log(getKeyForTask("ToggleCargoScoop"));
-// log(getKeyForTask("SetSpeed50"));
+exports = {
+    getKeyForTask: getKeyForTask
+};

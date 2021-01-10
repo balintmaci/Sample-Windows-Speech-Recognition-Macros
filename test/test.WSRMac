@@ -17,7 +17,7 @@
     </command>
 
     <command>
-        <listenFor>scenario 1</listenFor>
+        <listenFor>scenario 2</listenFor>
         <emulateRecognition>#: script( test , none , NaN , undefined , null )</emulateRecognition>
     </command>
 

@@ -24,18 +24,27 @@ function createLog() {
 createLog();
 
 function log(text) {
+    if (!text) {
+        text = "null";
+    }
     var logStream = fs.GetFile(mainPath + "logs.txt").OpenAsTextStream(fileConstants.ForAppending, fileConstants.TristateUseDefault);
     logStream.Write(text + "\n");
     logStream.Close();
-    if(WScript) {
-        WScript.Echo(text);
-    }
+    // if(WScript) {
+    //     WScript.Echo(text);
+    // }
 }
 
 function evalFile(path) {
     return eval(fs.GetFile(path).OpenAsTextStream().ReadAll());
 }
 
-var config = evalFile(mainPath + "utility-scripts\\config.json");
+function require(path) {
+    exports = {};
+    evalFile(path);
+    return exports;
+}
 
-evalFile(mainPath + filePath);
+var config = evalFile(mainPath + "config.json");
+
+evalFile(mainPath + "main.js");
