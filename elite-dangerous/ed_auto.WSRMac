@@ -20,41 +20,9 @@
     </command>
 
     <command>
-        <listenFor>?select [which] target</listenFor>
-
-        <setState name = "simpleAction" value ="Cycle{[which.val]}Target" />
-        <emulateRecognition>#: run script :#</emulateRecognition>
-        <speak>selecting {[which]} target</speak>
-    </command>
-
-    <command>
-        <listenFor>?select next system ?in ?route</listenFor>
-
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{s}t</sendKeys>
-        <speak>selecting next system in route</speak>
-    </command>
-
-    <command>
-        <listenFor>[firegroupVerb] [which] fire group</listenFor>
-
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{{[which.val]}}u</sendKeys>
-        <speak>selecting {[which]} firegroup</speak>
-    </command>
-
-    <command>
-        <listenFor>[toggleVerb] [toggleObject]</listenFor>
-
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{{[toggleObject.val]}}u</sendKeys>
-        <speak>{[toggleVerb]}ing {[toggleObject]}</speak>
-    </command>
-
-    <command>
         <listenFor>[divert] power to [whichPips]</listenFor>
 
-        <setState name = "simpleAction" value ="{[whichPips.val]}" />
+        <setState name="simpleAction" value="{[whichPips.val]}" />
         <setState name="actionTimes" value="{[divert.val]}" />
         <emulateRecognition>#: run script :#</emulateRecognition>
         <speak>{[divert]} power to {[whichPips]}</speak>
@@ -63,16 +31,48 @@
     <command>
         <listenFor>[resetVerb] power ?distribution</listenFor>
 
-        <setState name = "simpleAction" value ="ResetPowerDistribution" />
+        <setState name="simpleAction" value="ResetPowerDistribution" />
         <emulateRecognition>#: run script :#</emulateRecognition>
         <speak>pips reset</speak>
     </command>
 
     <command>
+        <listenFor>?select next system ?in ?route</listenFor>
+
+        <setState name="simpleAction" value="TargetNextRouteSystem" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>selecting next system in route</speak>
+    </command>
+
+    <command>
+        <listenFor>?select [target] target</listenFor>
+
+        <setState name="simpleAction" value="{[target.val]}" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>selecting {[target]} target</speak>
+    </command>
+
+    <command>
+        <listenFor>[firegroupVerb] [firegroup] fire group</listenFor>
+
+        <setState name="simpleAction" value="{[firegroup.val]}" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>selecting {[firegroup]} firegroup</speak>
+    </command>
+
+    <command>
+        <listenFor>[toggleVerb] [toggleObject]</listenFor>
+
+        <setState name="simpleAction" value="{[toggleObject.val]}" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>{[toggleVerb]}ing {[toggleObject]}</speak>
+    </command>
+
+    <command>
         <listenFor>reset ?headset orientation</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{HOME}</sendKeys>
+        <setState name="simpleAction" value="HMDReset" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
         <speak>orientation reset</speak>
     </command>
 
@@ -80,23 +80,23 @@
         <listenFor>transmit message</listenFor>
         <listenFor>transmission over</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>v</sendKeys>
+        <setState name="simpleAction" value="MicrophoneMute" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>recall ship</listenFor>
         <listenFor>dismiss ship</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>s</sendKeys>
+        <setState name="simpleAction" value="RecallDismissShip" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>?open [screen]</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{[screen.val]}</sendKeys>
+        <setState name="simpleAction" value="{[screen.val]}" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
         <speak>{[screen]}</speak>
     </command>
 
@@ -104,61 +104,62 @@
         <listenFor>* flight assist</listenFor>
         <listenFor>* drive assist</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>y</sendKeys>
+        <setState name="simpleAction" value="ToggleFlightAssist" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>boost engine</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>b</sendKeys>
-        <speak speakFlags="2">boosting</speak>
+        <setState name="simpleAction" value="UseBoostJuice" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>boosting</speak>
     </command>
 
     <command>
         <listenFor>frame shift drive</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{f}d</sendKeys>
+        <setState name="simpleAction" value="HyperSuperCombination" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>super cruise</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{s}c</sendKeys>
+        <setState name="simpleAction" value="Supercruise" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>hyper space jump</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{h}j</sendKeys>
+        <setState name="simpleAction" value="Hyperspace" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
     </command>
 
     <command>
         <listenFor>?toggle orbit lines</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>{o}l</sendKeys>
+        <setState name="simpleAction" value="OrbitLinesToggle" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
         <speak>toggling orbit lines</speak>
     </command>
 
     <command>
-        <listenFor>[changeDirection] throttle</listenFor>
+        <listenFor>[throttleChange] throttle</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys times="500">{1 WAIT}+{[changeDirection.val]}</sendKeys>
-        <speak>{[changeDirection]} throttle</speak>
+        <setState name="simpleAction" value="{[throttleChange.val]}" />
+        <setState name="actionTimes" value="500" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>{[throttleChange]} throttle</speak>
     </command>
 
     <command>
-        <listenFor>?set speed to [percent] ?%</listenFor>
+        <listenFor>?set speed to [enginePercent] ?%</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
-        <sendKeys>+{[percent.val]}</sendKeys>
-        <speak>setting speed to {[percent]} %</speak>
+        <setState name="simpleAction" value="{[enginePercent.val]}" />
+        <emulateRecognition>#: run script :#</emulateRecognition>
+        <speak>setting speed to {[enginePercent]} %</speak>
     </command>
 
     <command>
@@ -186,26 +187,33 @@
         <emulateRecognition>set speed to 25 %</emulateRecognition>
     </command>
 
-    <listenForList name="which" propname="val">
-        <item propval="t">?any</item>
-        <item propval="n">next</item>
-        <item propval="p">previous</item>
-        <item propval="d">most dangerous</item>
+    <listenForList name="firegroup" propname="val">
+        <item propval="CycleFireGroupNext">next</item>
+        <item propval="CycleFireGroupPrevious">previous</item>
+    </listenForList>
+
+    <listenForList name="target" propname="val">
+        <item propval="SelectTarget">?any</item>
+        <item propval="CycleNextTarget">next</item>
+        <item propval="CyclePreviousTarget">previous</item>
+        <item propval="SelectHighestThreat">most dangerous</item>
+        <item propval="CycleNextHostileTarget">next hostile</item>
+        <item propval="CyclePreviousHostileTarget">previous hostile</item>
     </listenForList>
     
     <listenForList name="toggleObject" propname="val">
-        <item propval="u">hardpoints</item>
-        <item propval="s">silent running</item>
-        <item propval="h">heatsink</item>
-        <item propval="l">?ship lights</item>
-        <item propval="g">landing gear</item>
-        <item propval="g">landing gears</item>
-        <item propval="g">wheels</item>
-        <item propval="c">?cargo scoop</item>
-        <item propval="y">chauff launcher</item>
-        <item propval="i">night vision</item>
-        <item propval="m">cockpit mode</item>
-        <item propval="t">?SRV turret</item>
+        <item propval="DeployHardpointToggle">hardpoints</item>
+        <item propval="ToggleButtonUpInput">silent running</item>
+        <item propval="DeployHeatSink">heatsink</item>
+        <item propval="ShipSpotLightToggle">?ship lights</item>
+        <item propval="LandingGearToggle">landing gear</item>
+        <item propval="LandingGearToggle">landing gears</item>
+        <item propval="LandingGearToggle">wheels</item>
+        <item propval="ToggleCargoScoop">?cargo scoop</item>
+        <item propval="FireChaffLauncher">chaff launcher</item>
+        <item propval="NightVisionToggle">night vision</item>
+        <item propval="PlayerHUDModeToggle">cockpit mode</item>
+        <item propval="ToggleBuggyTurretButton">?SRV turret</item>
     </listenForList>
 
     <listenForList name="firegroupVerb">
@@ -244,26 +252,26 @@
     </listenForList>
 
     <listenForList name="screen" propname="val">
-        <item propval="1">external panel</item>
-        <item propval="2">comms ?panel</item>
-        <item propval="3">role panel</item>
-        <item propval="4">internal panel</item>
-        <item propval=".">galaxy map</item>
-        <item propval=",">system map</item>
-        <item propval="o">discovery</item>
-        <item propval="k">full spectrum system scanner</item>
+        <item propval="FocusLeftPanel">external panel</item>
+        <item propval="FocusCommsPanel">comms ?panel</item>
+        <item propval="FocusRadarPanel">role panel</item>
+        <item propval="FocusRightPanel">internal panel</item>
+        <item propval="GalaxyMapOpen">galaxy map</item>
+        <item propval="SystemMapOpen">system map</item>
+        <item propval="OpenCodexGoToDiscovery">discovery</item>
+        <item propval="ExplorationFSSEnter">full spectrum system scanner</item>
     </listenForList>
 
-    <listenForList name="percent" propname="val">
-        <item propval="0">0</item>
-        <item propval="1">25</item>
-        <item propval="2">50</item>
-        <item propval="3">75</item>
-        <item propval="4">100</item>
+    <listenForList name="enginePercent" propname="val">
+        <item propval="SetSpeedZero">0</item>
+        <item propval="SetSpeed25">25</item>
+        <item propval="SetSpeed50">50</item>
+        <item propval="SetSpeed75">75</item>
+        <item propval="SetSpeed100">100</item>
     </listenForList>
     
-    <listenForList name="changeDirection" propname="val">
-        <item propval="w">increase</item>
-        <item propval="s">decrease</item>
+    <listenForList name="throttleChange" propname="val">
+        <item propval="ForwardKey">increase</item>
+        <item propval="BackwardKey">decrease</item>
     </listenForList>
 </speechMacros>
