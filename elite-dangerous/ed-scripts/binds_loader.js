@@ -38,6 +38,14 @@ function processKeyCode(keyString) {
             keyword = sliced.toUpperCase();
             if (keyword.indexOf("ARROW") > -1) {
                 keyword = keyword.substr(0, keyword.indexOf("ARROW"));
+            } else if (keyword.indexOf("SHIFT") > -1) {
+                return "{SHIFT}";
+            } else if (keyword.indexOf("CONTROL") > -1) {
+                return "{CTRL}";
+            } else if (keyword.indexOf("PERIOD") > -1) {
+                return ".";
+            } else if (keyword.indexOf("COMMA") > -1) {
+                return ",";
             }
             return "{" + keyword + "}";
         }
