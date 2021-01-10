@@ -66,14 +66,12 @@
     <command>
         <listenFor>stop ?ship</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <emulateRecognition>set speed to 0 %</emulateRecognition>
     </command>
 
     <command>
         <listenFor>full speed ?ahead</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <emulateRecognition>boost engine</emulateRecognition>
         <emulateRecognition>set speed to 100 %</emulateRecognition>
     </command>
@@ -81,14 +79,12 @@
     <command>
         <listenFor>half speed</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <emulateRecognition>set speed to 50 %</emulateRecognition>
     </command>
 
     <command>
         <listenFor>quarter speed</listenFor>
 
-        <switchToApp windowTitleContains="Elite - Dangerous (CLIENT)" />
         <emulateRecognition>set speed to 25 %</emulateRecognition>
     </command>
 
